@@ -16,6 +16,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+print("🔥 CORS MIDDLEWARE LOADED")
 
 
 @app.post("/chat", response_model=ChatResponse)
