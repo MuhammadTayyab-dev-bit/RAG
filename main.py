@@ -1,3 +1,4 @@
+print("🔥🔥🔥 THIS IS MY LATEST MAIN.PY 🔥🔥🔥", flush=True)
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
