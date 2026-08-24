@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FastAPI Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div>
+                <h2>FastAPI Assistant</h2>
+                <p>Your AI assistant for FastAPI</p>
+            </div>
+
+        </div>
+
+
+        <button class="new-chat-btn" id="newChatBtn">
+            <i class="fa-solid fa-plus"></i>
+            New Chat
+        </button>
+
+
+        <!-- About Card -->
+
+        <div class="about-card">
+
+            <div class="about-icon">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+
+            <h3>FastAPI Assistant</h3>
+
+            <p>
+                Ask anything about FastAPI documentation,
+                parameters, dependencies, requests,
+                responses, security and more.
+            </p>
+
+        </div>
+
+        <!-- ================= CHAT HISTORY ================= -->
+
+<div class="recent-section">
+
+    <h3>Recent Chats</h3>
+
+    <div id="chatHistory"></div>
+
+</div>
+
+        <div class="sidebar-footer">
+
+            <span>
+                <i class="fa-solid fa-code"></i>
+                Built with <span class="heart">♥</span> for developers
+            </span>
+
+            
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- Topbar -->
+
+        <header class="topbar">
+
+            <div class="mobile-brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+                <strong>FastAPI Assistant</strong>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <div class="online-status">
+
+                    <span class="status-dot"></span>
+
+                    AI Online
+
+                </div>
+
+
+
+                <button class="theme-btn" id="themeBtn" title="Toggle theme">
+                    <i class="fa-regular fa-moon"></i>
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CHAT AREA ================= -->
+
+        <section class="chat-area">
+
+
+            <!-- Welcome Screen -->
+
+            <div class="welcome" id="welcome">
+
+                <div class="welcome-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+
+
+                <h1>
+                    How can I help
+                    <span>with FastAPI?</span>
+                </h1>
+
+
+                <p>
+                    Ask anything about FastAPI documentation,
+                    parameters, dependencies, requests,
+                    responses, security, and more.
+                </p>
+
+            </div>
+
+
+            <!-- Suggestion Questions -->
+
+            <div class="suggestions" id="suggestions">
+
+
+                <button class="suggestion-card">
+
+                    <div class="suggestion-icon purple">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            What is a path operation?
+                        </h3>
+
+                        <p>
+                            Understand path operations in FastAPI
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <button class="suggestion-card">
+
+                    <div class="suggestion-icon green">
+                        <i class="fa-solid fa-plug"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            How does dependency injection work?
+                        </h3>
+
+                        <p>
+                            Learn about FastAPI dependencies
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <button class="suggestion-card">
+
+                    <div class="suggestion-icon blue">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            How do query parameters work?
+                        </h3>
+
+                        <p>
+                            Explore query parameters usage
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <button class="suggestion-card">
+
+                    <div class="suggestion-icon orange">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            What does response_model do?
+                        </h3>
+
+                        <p>
+                            Understand response models in FastAPI
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- REAL MESSAGES WILL APPEAR HERE -->
+
+            <div
+                class="messages"
+                id="messages">
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= COMPOSER ================= -->
+
+        <div class="composer-wrapper">
+
+            <div class="composer">
+
+
+                <button
+                    class="attachment-btn"
+                    type="button">
+
+                    <i class="fa-solid fa-paperclip"></i>
+
+                </button>
+
+
+                <textarea
+                    id="messageInput"
+                    placeholder="Ask anything about FastAPI..."
+                    rows="1">
+                </textarea>
+
+
+                <button
+                    class="send-btn"
+                    id="sendBtn"
+                    type="button">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </div>
+
+
+            <p class="disclaimer">
+                FastAPI Assistant can make mistakes.
+                Verify important information.
+            </p>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
