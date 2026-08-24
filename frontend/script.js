@@ -267,7 +267,7 @@ async function sendMessage(question = null) {
         // -----------------------------------------
 
         const response =
-            await fetch("/chat", {
+            await fetch("https://rag-production-35c3.up.railway.app/chat", {
 
                 method: "POST",
 
